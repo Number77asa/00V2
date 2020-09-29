@@ -10,14 +10,63 @@ html, body {
     padding: 0;
 }
 
+
 body {
-    background-color: #e7ebf0;
+    background-color: transparent;
+}
+    
+/*nota, since classname navbar-expand-sm navbar-light bg-light is not just "navbar" then 
+we cant just use .navbar { ..}. 
+since this class name has spaces.
+so, we need to use only the bg-light portion of it*/
+.bg-light {
+    text-align: center;
+    vertical-align: middle;
+    display: flex; 
+    white-space:nowrap;
+    padding: 1em;
+    background-color: transparent;
+
+    border-bottom:1px solid rgb(226, 226, 226);
+    border-bottom-width: thin;
+    height:7vw;
+}
+.container {
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    padding: 1em; 
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    background-color: transparent;
+
+    height:5vw;
 }
 
-.container {
-    width: 1000px;
-    margin: 20px auto;
+
+.menu {
+    display:flex;
+    flex-wrap: wrap;
+    background-color: transparent;
+    position: fixed;
+    background-position: center;
+    border-radius: 0px;
+    width: 100%;
+    /*not sure why logo image requires height > 50px*/
+    height: 100%;
+    display: inline-block;
+    justify-content: space-between;
+    padding: 0;
+    position: relative;
+    top: 0%;
+    /*this parameter belo wis how to move the menu items up or bottom*/
+    /*e.g. margin-top: -2.5em;*/
+    margin-top: 0;
 }
+
+
 
 .center {
     display: flex;
@@ -28,99 +77,101 @@ body {
     display: none;
 }
 
-.menu {
-    background-color: white;
-    box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
-    width: 752px;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 40px;
-    position: relative;
+.btn{
+
+      font-size: 1vw;
+        text-align: center;
+        margin: auto;
+        padding: 0px;
 }
 
-.menu__right {
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-.menu__list {
-    list-style-type: none;
-    padding: 0;
-    height: 100%;
-    margin: 0;
-    margin-right: 40px;
-}
-
-.menu__list-item {
-    display: inline-block;
-    height: 100%;
-    margin-right: 20px;
-}
-
-.menu__list-item:last-child {
-    margin-right: 0;
-}
-
-.menu__link {
-    color: #3a3e47;
-    display: inline-block;
-    height: 100%;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    padding: 0 3px;
-}
-
-.menu__link:hover {
-    color: #ffaa3b;
-}
-
-.menu__link--active {
-       color: #ffaa3b;
-    border-top: 4px solid #ffaa3b;
-    font-weight: 700;
-}
-
-.menu__logo {
-    text-indent: -9999999px;
-    display: inline-block;
-    height: 100%;
-    width: 92px;
-    background-size: cover 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 0;
-}
-
-.menu__search-button {
-    height: 42px;
-    width: 42px;
-    border-radius: 50%;
-    border: 1px solid #c8c9ce;
-    background-color: transparent;
-    outline: none;
-    cursor: pointer;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.menu__search-form {
-    position: absolute;
-    top: 100%;
+button{
+    display:flex;
+    flex-wrap: wrap;
+   
+    padding: 1em; 
+    flex-wrap: wrap;
+    text-align: center;
+    
+    background-size: contain;
+    width: 5vw;
+    height: 3vw;
+    top: 0;
+    bottom: 0;
+    left: 0;
     right: 0;
-    padding: 10px;
-    background-color: white;
+    margin: auto;
+    vertical-align: middle;
+    text-align: center
+    /*
+    object-fit: cover;
+    
+  
+    */
 }
 
-.menu__search-input {
-    outline: none;
-    border: 1px solid #c8c9ce;
-    font-size: 18px;
-    padding: 5px;
-    font-weight: 300;
+
+.text-light{
+    display:flex;
+    flex-wrap: wrap;
+    font-size: 1.19vw;
+    line-height: .5vw;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+
 }
+
+strong{
+    display:flex;
+    flex-wrap: wrap;
+    font-size: 1.3vw;
+   
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.nav-item{
+
+    background-size: contain;
+}
+.menu__logo {
+    
+    display: flex;
+    position: fixed;
+  object-fit: cover;
+  width: 22vw;
+  height: 22vw;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/* takes up 80% of screen
+@media (min-width:1025px) { .container { width: 80% !important;} }*/
+@media only screen and (min-width:240px) and (max-width: 992px)  {
+    .navbar .container .menu {
+       width:100%;
+       font-size: 9px;
+      }
+    
+    }
+    

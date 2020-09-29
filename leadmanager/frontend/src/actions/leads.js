@@ -43,7 +43,7 @@ export const deleteLead = id => (dispatch, getState) => {
         //the above gets or deletes from server & belowe deletes from UI (independent)
         //replace .delete with .get to see how itl stay in server and not ui
         .then(res => {
-            dispatch(createMessage({ deleteLead: "Lead Deleted" }));
+            dispatch(createMessage({ deleteLead: "Order Deleted" }));
             dispatch({
                 type: DELETE_LEAD,
                 payload: id
@@ -57,7 +57,7 @@ export const addLead = lead => (dispatch, getState) => {
     axios
         .post("/api/leads/", lead, tokenConfig(getState))
         .then(res => {
-            dispatch(createMessage({ addLead: "Lead Added" }));
+            dispatch(createMessage({ addLead: "Order Added" }));
             dispatch({
                 type: ADD_LEAD,
                 payload: res.data

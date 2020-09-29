@@ -1,0 +1,173 @@
+/*generally position for parent container should be relative, and others can be absolute*/
+
+.card-group12{
+vertical-align: none;
+display: flex;
+white-space:nowrap;
+height: 100%;
+width: 100%;
+/*this position relative allows for the Leads.js fragement to push this component down when a lead is added!*/
+position: relative;
+margin-top: -5px;
+
+}
+.card-group12 [class*='container-fluid'] {
+  display: flex;
+  padding: 1em;
+  flex-wrap: wrap;
+}
+/* if you put ths then the organce lines touch?
+.container-fluid > div {
+  display: inline-block;
+  margin-right:0;
+  margin-left:0;
+  /*does nothing
+  margin:0;
+  padding: 0;
+  padding: 1em;
+  border: 2px solid orange;
+}*/
+
+.card-group12 [class*='col-sm-6'] {
+
+ /* does nothing
+  left: 0;
+  top: 0;*/
+
+  z-index: 2;
+  display: flex;
+  padding: 1em;
+  flex-wrap: wrap;
+
+  width: 30%;
+  height: auto;
+  left: 3vw;  
+
+  bottom:0;
+  margin: auto;
+  position: fixed;
+ 
+
+
+} 
+
+
+
+
+
+.card-group12 img {
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 90%;
+  height: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  
+  /*this margin-top: -20em; stuff is not good for reducing browser size*/
+  
+  /*need to center this?*/
+  background-size: contain;
+  display:flex;
+  flex-wrap: wrap;
+  /*  this puts it in top left
+  position: absolute;*/
+  vertical-align: middle;
+  
+}
+
+
+
+.card-group12 [class*='card'] {
+  
+  display: inline-block;
+  padding: 1em;
+
+}
+
+
+
+.grid {
+  display: flex;
+  padding: 1em;
+  flex-wrap: wrap;
+  padding:0;
+  margin: 0 auto;   
+  /*does nothing
+  margin-left: -10%;*/
+
+
+
+  position: absolute;
+  width: 70%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+ 
+}
+
+  
+.wrapper {
+  position: relative;
+  display: inline-block;
+  /*for some reason this affects height of it?*/
+  padding-top: 55%; /* 16:9 Aspect Ratio */
+  width: calc(100vw/4);
+   /*  width: 100%;*/
+  margin: 2px;
+  border: 1px solid magenta;
+  margin: 4em;
+
+}
+  
+  
+.padded-container {
+    /*this width is not suppose to be there*/
+    width: 100%;
+    height: 0;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: calc(40%/4);
+    /*this gives sepeartion between cards*
+    margin-left: -10%;*/
+    margin: 2em;
+    
+}
+  
+  
+
+  .m-auto{
+    margin: none;
+    /* useless params
+    height: 100%;
+    width: 100%;*/
+}
+
+h2{ 
+  font-size: 1.38vw;
+}
+
+label {
+
+  font-size: 1.21vw;
+
+  /*
+  background-size: contain;*/
+}
+
+.card-group12 [class*='btn'] {
+  font-size: 1vw;
+        text-align: center;
+        margin: auto;
+        padding: 0px;
+
+}
+    /*
+    background-size: contain;*/
+  /*
+  background-size: contain;*/

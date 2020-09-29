@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+.card-group14 [class*='container'] {
+    vertical-align: none;
+    display: flex;
+    white-space:nowrap;
+    height: 100%;
+    width: 100%;
+}
+*/
+
+
+
+
+.table{
+
+    border: 1px solid blue;
+}
+
+tr{
+    border: 1px solid blue;
+}
+td{
+    border: 1px solid blue;
+}
+.table-striped{
+    border: 1px solid blue; 
+
+}
+
+.container-fluid{
+height: 15vw;
+width: 100%;
+/*this position relative allows for the Leads.js fragement to push this component down when a lead is added!*/
+position: relative;
+
+}
+
+h5{
+font-size: .21vw;
+
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          color: white;
+          font-family: "Yellowtail";
+          font-size: 24px;
+          font-weight: bold;
+
+}

@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}  
+/*this wierd thing allows to specify functionaly to apply only to register's card*/
+.card-group10 [class*='col-md-6'] {
+    vertical-align: none;
+    border: 1px solid greenyellow;
+    display: inline-block;
+    white-space:nowrap;
+    height: 100%;
+    width: 100%;
+    /*position of col will only be centered if its absolute*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    margin-left: 0;
+    margin-right:0;
+  }
+.card-group10 [class*='card-body'] {
+    float:none;
+    
+  }
+  
+  .card-group10 [class*='card'] {
+    /*width of card will only work if parent is display: inlineblock*/
+    width: 60%;
+    display: inline-block;
+    padding: 1em;
+    border: 1px solid blue;
+    background-size: contain;
+    }
+
+.card-group10 [class*='btn'] 
+{ 
+  font-size: 1vw;
+  text-align: center;
+  margin: auto;
+  padding: 0px;
+  /*
+  vertical-align: middle;
+  text-align: center;*/
+}
+

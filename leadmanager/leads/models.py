@@ -6,8 +6,8 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Lead(models.Model):
     name = models.CharField(max_length=100)
-    email = models.EmailField(max_length=100, unique=True)
-    message = models.CharField(max_length=500, blank=True)
+
+    message = models.CharField(max_length=10000, blank=True)
     # the model owner is for the authentication api; we want each owner/user to see only their leads; we passs in User model
     # if a user is deleted, we delete all their leads aswell
     owner = models.ForeignKey(

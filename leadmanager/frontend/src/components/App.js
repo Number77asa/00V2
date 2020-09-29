@@ -15,12 +15,13 @@ import Login from "./accounts/Login";
 import Register from "./accounts/Register";
 import PrivateRoute from "./common/PrivateRoute";
 
-
 //so we want to bring our store.js and the provider from react-redux (package that integrates two together//
 
 import { Provider } from 'react-redux';
 import store from '../store';
-import { loadUser } from '../actions/auth'
+import { loadUser } from '../actions/auth';
+
+import './App.css';
 
 
 //import '/home/adduser/imagereog1ars-app3/loader.js'
@@ -59,7 +60,7 @@ class App extends Component {
                             <Alerts />
                             <div className="container">
                                 <Switch>
-                                    <PrivateRoute exact path="/" component=
+                                    <Route exact path="/" component=
                                         {Dashboard} />
                                     <Route exact path="/register" component=
                                         {Register} />

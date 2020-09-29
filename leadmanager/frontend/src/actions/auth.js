@@ -1,4 +1,6 @@
 //bring in axios so we can make requests
+//actions update the server!! ; the pass information from frotned and vice versa
+//we can post to server etc
 import axios from "axios";
 import { returnErrors } from "./messages";
 
@@ -151,3 +153,4 @@ export const tokenConfig = getState => {
 
     return config;
 };
+

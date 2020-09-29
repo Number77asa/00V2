@@ -1,0 +1,96 @@
+
+
+video{
+
+    background-size: contain;
+
+    /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+    width: auto;
+    height: auto;
+
+    /* This forces the video up; shows ugly side*/
+   /* margin-top: 35em;*/
+   /*position absolute looks best*/
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+
+.card-group6 [class*='col-sm-6'] {
+   
+    background-color: transparent;
+    display:inline-block;
+    position:absolute;
+    float:none;
+    width:100%;
+    min-height:auto;
+    background-color: transparent; /*needs to be invisible*/
+    z-index:300000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    margin-left: 0;
+    margin-right:0;
+}
+
+
+.card-group6 [class*='card'] {
+    width: auto;
+    display: inline-block;
+    padding: 1em;
+}
+
+.card-group6 [class*='btn'] {
+        font-size: 1vw;
+        text-align: center;
+        margin: auto;
+        /*padding is what centered it in its button*/
+        padding: 0px;
+}
+
+h3 
+    { 
+          font-size: 1.4vw;
+          position: absolute;
+          top: 0;
+          bottom: 2vw;
+          left: 0;
+          right: 0;
+          margin: auto;
+          color: white;
+          font-family: "Yellowtail";
+          font-size: 24px;
+          font-weight: bold;
+}
+
+ h1{ 
+    font-size: 1.4vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: white;
+    font-family: cursive;
+    font-weight: bold;
+    margin-bottom: 2vw;
+}
+    
+
+h4{ 
+    font-size: 1.4vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: white;
+    font-family: cursive;
+    font-weight: bold;
+}

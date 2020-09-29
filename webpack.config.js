@@ -2,7 +2,13 @@ var webpack = require('webpack');
 
 
 module.exports = {
+    watchOptions: {
+        poll: true,
+        ignored: /node_modules/
+    },
+
     module: {
+
 
         rules: [
             {
@@ -18,8 +24,9 @@ module.exports = {
                 },
             },
             {
-                test: /\.css$/,
-                loader: "style-loader!css-loader"
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+
             }, {
                 test: /\.(jpg|png)$/,
                 use: {
@@ -42,4 +49,5 @@ module.exports = {
             jquery: "jquery/src/jquery"
         }
     }
+
 }

@@ -15,13 +15,26 @@ Including another URLconf
 """
 
 
-from django.contrib import admin
+from django.conf.urls import include
+from django.conf import settings
+from django.urls import path
+#from django.contrib import admin
 from django.urls import path, include
+#from django.views.generic import TemplateView
 
+# from django.contrib.auth.views import login
 
 urlpatterns = [
     path('', include('frontend.urls')),
     path('', include('leads.urls')),
     path('', include('accounts.urls')),
-    path('admin/', admin.site.urls)
+    # path('', TemplateView.as_view(
+    #    template_name='../../frontend/templates/frontend/social_app/index.html')),
+
+    #path('admin/', admin.site.urls),
+    # perhaps '' is necearry
+    path('api/auth/', include('rest_framework_social_oauth2.urls')),
+    # accounts above is currenlty an app, here its just a directory
+    #path('accounts/', include('allauth.urls')),
+
 ]

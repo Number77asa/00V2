@@ -22,39 +22,42 @@ export class Leads extends Component {
 
     render() {
         return (
-            <Fragment>
-                <h2>Leads</h2>
-                <table className="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Message</th>
-                            <th />
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.props.leads.map(lead => (
-                            <tr key={lead.id}>
-                                <td>{lead.id}</td>
-                                <td>{lead.name}</td>
-                                <td>{lead.email}</td>
-                                <td>{lead.message}</td>
-                                <td>
-                                    <button
-                                        onClick={this.props.deleteLead.bind(this, lead.id)}
-                                        className="btn btn-danger btn-sm"
-                                    >
-                                        {" "}
+
+            <div className="container-fluid">
+                <Fragment>
+                    <h2>Order (Delivered to you, Never Frozen, From Local Markets & Quality Vetted) </h2>
+                    <table className="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+
+                                <th>Order</th>
+                                <th />
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.props.leads.map(lead => (
+                                <tr key={lead.id}>
+                                    <td>{lead.id}</td>
+                                    <td>{lead.name}</td>
+
+                                    <td>{lead.message}</td>
+                                    <td>
+                                        <button
+                                            onClick={this.props.deleteLead.bind(this, lead.id)}
+                                            className="btn btn-danger btn-sm"
+                                        >
+                                            {" "}
                                         Delete
                                     </button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </Fragment>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </Fragment>
+            </div>
         );
     }
 }

@@ -10,13 +10,26 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { login } from '../../actions/auth';
+import './Login.css';
 
+/*
+FB.getLoginStatus(function (response) {
+    statusChangeCallback(response);
+});
+
+
+function checkLoginState() {
+    FB.getLoginStatus(function (response) {
+        statusChangeCallback(response);
+    });
+}*/
 export class Login extends Component {
     //putting in component level state (has nothing to do with redux)
     state = {
         username: "",
         password: ""
     }
+
 
     static propTypes = {
         login: PropTypes.func.isRequired,
@@ -38,42 +51,68 @@ export class Login extends Component {
         }
         const { username, password } = this.state;
         return (
-            <div className="col-md-6 m-auto">
-                <div className="card card-body mt-5">
-                    <h2 className="text-center">Login</h2>
-                    <form onSubmit={this.onSubmit}>
-                        <div className="form-group">
-                            <label>Username</label>
-                            <input
-                                type="text"
-                                className="form-control"
-                                name="username"
-                                onChange={this.onChange}
-                                value={username}
-                            />
-                        </div>
+            <div className="card-group6">
+                <div className="container">
+                    <h3 className="text-center">Poke, Organic Juice, Sashimi, Ceviche & Sushi</h3>
+                    <h4 className="text-center">Mon - Sat 11-5pm</h4>
+                    <div className="col-sm-6 m-auto">
+                        <div className="card card-body mt-5">
+                            <h2 className="text-center">Login</h2>
+                            <form onSubmit={this.onSubmit}>
+                                <div className="form-group">
+                                    <label>Username</label>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        name="username"
+                                        onChange={this.onChange}
+                                        value={username}
+                                    />
+                                </div>
 
-                        <div className="form-group">
-                            <label>Password</label>
-                            <input
-                                type="password"
-                                className="form-control"
-                                name="password"
-                                onChange={this.onChange}
-                                value={password}
-                            />
+                                <div className="form-group">
+                                    <label>Password</label>
+                                    <input
+                                        type="password"
+                                        className="form-control"
+                                        name="password"
+                                        onChange={this.onChange}
+                                        value={password}
+                                    />
+                                </div>
+
+                                <div className="form-group">
+
+                                </div>
+                                <div className="form-group">
+                                    <button type="submit" className="btn btn-primary">
+                                        Login
+                                     </button>
+                                </div>
+
+                                <p>
+                                    Don't have an account? <Link to="/register">Register</Link>
+                                </p>
+                                <p>15% of your second order</p>
+
+                            </form>
                         </div>
-                        <div className="form-group">
-                            <button type="submit" className="btn btn-primary">
-                                Login
-                        </button>
-                        </div>
-                        <p>
-                            Don't have an account? <Link to="/register">Register</Link>
-                        </p>
-                    </form>
+                    </div>
+
+                    <div>
+                        <video preload="auto" loop autoPlay controls muted className="video-fluid z-depth-1">
+                            <source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
+
+                        </video>
+
+                    </div>
+
+                    <h1 className="text-center">Delivered to you, Never Frozen, From Local Markets & Quality Vetted</h1>
+
                 </div>
             </div>
+
+
 
         )
     }

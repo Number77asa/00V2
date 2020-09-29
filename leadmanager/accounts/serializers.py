@@ -1,11 +1,20 @@
 # want to be able to register a user atleast with postman
 # django already has a user model, weree just using knox for tokens
+from django.core.validators import validate_email
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
+from rest_framework.authentication import SessionAuthentication
 
+from django.core.exceptions import ValidationError
+from django.shortcuts import get_list_or_404, get_object_or_404
+from django.core import exceptions
+from django.utils.translation import gettext as _
 # User Serializer
 # very similar to the lead searlizer we used
+
+# from rest_framework import serializers
+from rest_framework.authtoken.models import Token
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -45,3 +54,10 @@ class LoginSerializer(serializers.Serializer):
         if user and user.is_active:
             return user
         raise serializers.ValidationError("Incorrect Credentials")
+
+
+class SocialSerializer(serializers.Serializer):
+
+    provider = serializers.CharField(max_length=255, required=True)
+    access_token = serializers.CharField(
+        max_length=4096, required=True, trim_whitespace=True)

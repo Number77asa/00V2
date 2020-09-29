@@ -26,12 +26,11 @@ export class Header extends Component {
                     <strong>{user ? `Welcome ${user.username}` : ""}</strong>
                 </span>
                 <li className="nav-item">
-                    <button
+                    <center><button
                         onClick={this.props.logout}
-                        className="nav-link btn btn-info btn-sm text-light"
-                    >
+                        className="nav-link btn btn-info btn-sm text-light">
                         Logout
-          </button>
+                    </button></center>
                 </li>
             </ul>
         );
@@ -52,7 +51,9 @@ export class Header extends Component {
         );
 
         return (
+
             <nav className="navbar navbar-expand-sm navbar-light bg-light">
+
                 <div className="container">
                     <button
                         className="navbar-toggler"
@@ -65,39 +66,19 @@ export class Header extends Component {
                     >
                         <span className="navbar-toggler-icon" />
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <a className="navbar-brand" href="#">
-                            DOC ANNIE'S SUPER FOODS</a>
-                    </div>
-
 
                     <nav className="menu">
+
                         <h1 style={{
                             backgroundImage: 'url(' + logo + ')'
-                        }} className="menu__logo">Epic Co.</h1>
-
-                        <div className="menu__right">
-                            <ul className="menu__list">
-                                <li className="menu__list-item"><a className="menu__link menu__link--active" href="#">Home</a></li>
-                                <li className="menu__list-item"><a className="menu__link" href="#">About</a></li>
-                                <li className="menu__list-item"><a className="menu__link" href="#">Portfolio</a></li>
-                                <li className="menu__list-item"><a className="menu__link" href="#">Contact</a></li>
-                            </ul>
-
-                            <button style={{
-                                backgroundImage: 'url(' + searchIcon + ')'
-                            }} className="menu__search-button"></button>
-
-                            <form className="menu__search-form hide" method="POST">
-                                <input className="menu__search-input" placeholder="Type and hit enter" />
-                            </form>
-                        </div>
+                        }} className="menu__logo"></h1>
                     </nav>
-                </div>
 
+                </div>
                 {isAuthenticated ? authLinks : guestLinks}
 
             </nav>
+
         );
     }
 }
@@ -109,4 +90,4 @@ const mapStateToProps = state => ({
 export default connect(
     mapStateToProps,
     { logout }
-)(Header);
+)(Header)
